@@ -1,5 +1,5 @@
 FROM debian:bullseye
-MAINTAINER Allen lee <icerleer@qq.com>
+LABEL AUTHOR Allenlee 
 
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -yq install git
 
@@ -46,4 +46,4 @@ RUN cd /usr/src/freeswitch && make -j`nproc` && make install
 RUN apt-get clean
 
 # Uncomment to cleanup even more
-#RUN rm -rf /usr/src/*
+RUN rm -rf /usr/src/*
